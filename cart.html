@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart | Azhagu Mayil Collection</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand-logo">
+        <div style="width:2.5rem; height:2.5rem; border-radius:50%; background:#FAF7F2; border:1px solid #D4AF37; display:flex; align-items:center; justify-content:center; color:#9E782F; font-size:1.2rem;">🦚</div>
+        <div class="brand-text">
+          <h1>Azhagu Mayil</h1>
+          <span>Collection · Chennai</span>
+        </div>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container" style="padding: 3rem 1.25rem;">
+    <h1 class="font-serif" style="font-size: 2.25rem; color: #380510; margin-bottom: 2rem;">Shopping Cart</h1>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+      <div id="cart-items-container" style="background: white; padding: 1.5rem; border-radius: 1rem; border: 1px solid var(--color-border);">
+        <!-- Loaded via JS -->
+      </div>
+
+      <div style="background: white; padding: 1.5rem; border-radius: 1rem; border: 1px solid var(--color-border); height: fit-content;">
+        <h3 class="font-serif" style="font-size: 1.25rem; color: #380510; margin-bottom: 1rem; border-bottom: 1px solid #eee; padding-bottom: 0.5rem;">Order Summary</h3>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.9rem;">
+          <span>Subtotal:</span>
+          <span id="cart-page-subtotal" class="font-mono font-bold">₹0</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; font-size: 0.9rem;">
+          <span>Delivery:</span>
+          <span style="color: green; font-weight: 600;">FREE</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 1.5rem; font-size: 1.1rem; font-weight: 700; border-top: 1px solid #eee; padding-top: 0.75rem;">
+          <span>Grand Total:</span>
+          <span id="cart-page-total" class="font-mono text-maroon" style="color: #500B1A;">₹0</span>
+        </div>
+        <a href="checkout.html" class="gold-btn" style="width: 100%; justify-content: center; text-align: center;">Proceed to Checkout →</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/wishlist.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', renderCartPage);
+
+    function renderCartPage() {
+      const container = document.getElementById('cart-items-container');
+      const cart = getCart();
+
+      if (cart.length === 0) {
+        container.innerHTML = `<div style="text-align:center; padding: 2rem;">
+          <p style="font-size:1.1rem; color:#500B1A;">Your shopping bag is empty.</p>
+          <a href="shop.html" class="maroon-btn" style="margin-top:1rem; font-size:0.8rem;">Explore Sarees</a>
+        </div>`;
+        document.getElementById('cart-page-subtotal').textContent = '₹0';
+        document.getElementById('cart-page-total').textContent = '₹0';
+        return;
+      }
+
+      container.innerHTML = cart.map(item => `
+        <div style="display:flex; gap:1rem; align-items:center; padding:1rem 0; border-bottom:1px solid #eee;">
+          <img src="${item.image}" alt="${item.name}" style="width:70px; height:85px; object-fit:cover; border-radius:0.5rem;">
+          <div style="flex:1;">
+            <h4 style="font-size:0.95rem; font-weight:600; color:#380510;">${item.name}</h4>
+            <p style="font-size:0.8rem; color:#666;">₹${item.price.toLocaleString('en-IN')} × ${item.quantity}</p>
+          </div>
+          <button onclick="removeFromCart('${item.id}'); renderCartPage();" style="color:#c00; font-size:0.8rem; cursor:pointer;">Remove</button>
+        </div>
+      `).join('');
+
+      const total = cart.reduce((s, i) => s + i.price * i.quantity, 0);
+      document.getElementById('cart-page-subtotal').textContent = `₹${total.toLocaleString('en-IN')}`;
+      document.getElementById('cart-page-total').textContent = `₹${total.toLocaleString('en-IN')}`;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout | Azhagu Mayil Collection</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand-logo">
+        <div style="width:2.5rem; height:2.5rem; border-radius:50%; background:#FAF7F2; border:1px solid #D4AF37; display:flex; align-items:center; justify-content:center; color:#9E782F; font-size:1.2rem;">🦚</div>
+        <div class="brand-text">
+          <h1>Azhagu Mayil</h1>
+          <span>Collection · Chennai</span>
+        </div>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="cart.html">← Back to Bag</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container" style="padding: 3rem 1.25rem;">
+    <h1 class="font-serif" style="font-size: 2.25rem; color: #380510; margin-bottom: 2rem;">Secure Checkout</h1>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem;">
+      <!-- Customer Information Form -->
+      <form id="checkout-form" style="background: white; padding: 2rem; border-radius: 1.5rem; border: 1px solid var(--color-border); display: flex; flex-direction: column; gap: 1rem;">
+        <h3 class="font-serif" style="font-size: 1.25rem; color: #380510; border-bottom: 1px solid #eee; padding-bottom: 0.5rem;">1. Delivery Address</h3>
+
+        <div>
+          <label style="display: block; font-size: 0.8rem; font-weight: 600; margin-bottom: 0.25rem;">Full Name *</label>
+          <input type="text" required placeholder="e.g. Sowmya Raghavan" style="width: 100%; padding: 0.6rem; border: 1px solid var(--color-border); border-radius: 0.5rem; font-size: 0.85rem;">
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div>
+            <label style="display: block; font-size: 0.8rem; font-weight: 600; margin-bottom: 0.25rem;">Phone Number *</label>
+            <input type="tel" required placeholder="+91 98402 12345" style="width: 100%; padding: 0.6rem; border: 1px solid var(--color-border); border-radius: 0.5rem; font-size: 0.85rem;">
+          </div>
+          <div>
+            <label style="display: block; font-size: 0.8rem; font-weight: 600; margin-bottom: 0.25rem;">Email Address *</label>
+            <input type="email" required placeholder="name@example.com" style="width: 100%; padding: 0.6rem; border: 1px solid var(--color-border); border-radius: 0.5rem; font-size: 0.85rem;">
+          </div>
+        </div>
+
+        <div>
+          <label style="display: block; font-size: 0.8rem; font-weight: 600; margin-bottom: 0.25rem;">Address *</label>
+          <textarea required rows="2" placeholder="Street, Landmark, Apartment" style="width: 100%; padding: 0.6rem; border: 1px solid var(--color-border); border-radius: 0.5rem; font-size: 0.85rem;"></textarea>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.75rem;">
+          <div>
+            <label style="display: block; font-size: 0.8rem; font-weight: 600; margin-bottom: 0.25rem;">City *</label>
+            <input type="text" required value="Chennai" style="width: 100%; padding: 0.6rem; border: 1px solid var(--color-border); border-radius: 0.5rem; font-size: 0.85rem;">
+          </div>
+          <div>
+            <label style="display: block; font-size: 0.8rem; font-weight: 600; margin-bottom: 0.25rem;">State *</label>
+            <input type="text" required value="Tamil Nadu" style="width: 100%; padding: 0.6rem; border: 1px solid var(--color-border); border-radius: 0.5rem; font-size: 0.85rem;">
+          </div>
+          <div>
+            <label style="display: block; font-size: 0.8rem; font-weight: 600; margin-bottom: 0.25rem;">Pincode *</label>
+            <input type="text" required value="600017" style="width: 100%; padding: 0.6rem; border: 1px solid var(--color-border); border-radius: 0.5rem; font-size: 0.85rem;">
+          </div>
+        </div>
+
+        <h3 class="font-serif" style="font-size: 1.25rem; color: #380510; border-top: 1px solid #eee; padding-top: 1rem; margin-top: 0.5rem;">2. Payment Method</h3>
+        <div style="display: flex; gap: 1rem;">
+          <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem;">
+            <input type="radio" name="pay" checked> Instant UPI
+          </label>
+          <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem;">
+            <input type="radio" name="pay"> Cash on Delivery
+          </label>
+        </div>
+
+        <button type="submit" class="gold-btn" style="width: 100%; justify-content: center; margin-top: 1rem;">Place Order Now</button>
+      </form>
+
+      <!-- Order Items Summary -->
+      <div style="background: white; padding: 2rem; border-radius: 1.5rem; border: 1px solid var(--color-border); height: fit-content;">
+        <h3 class="font-serif" style="font-size: 1.25rem; color: #380510; border-bottom: 1px solid #eee; padding-bottom: 0.5rem; margin-bottom: 1rem;">Order Items</h3>
+        <div id="checkout-items-list" style="margin-bottom: 1rem;">
+          <!-- Loaded via JS -->
+        </div>
+
+        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.85rem;">
+          <span>Subtotal:</span>
+          <span id="checkout-subtotal">₹0</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.85rem;">
+          <span>Express Shipping:</span>
+          <span style="color: green; font-weight: 600;">FREE</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; font-size: 1.15rem; font-weight: 700; border-top: 1px solid #eee; padding-top: 0.75rem; color: #500B1A;">
+          <span>Grand Total:</span>
+          <span id="checkout-total">₹0</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Receipt Confirmation Modal -->
+  <div id="receipt-modal" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6); align-items: center; justify-content: center; z-index: 999; padding: 1rem;">
+    <div style="background: white; padding: 2rem; border-radius: 1.5rem; max-width: 450px; width: 100%; text-align: center; border: 1px solid #D4AF37;">
+      <div style="font-size: 3rem; margin-bottom: 1rem;">🦚</div>
+      <h2 class="font-serif" style="color: #380510; font-size: 1.75rem;">Order Confirmed!</h2>
+      <p style="color: #666; font-size: 0.85rem; margin: 0.5rem 0 1rem;">Thank you for your order with Azhagu Mayil Collection.</p>
+      <p style="font-family: monospace; font-size: 1.1rem; font-weight: 700; color: #500B1A;" id="modal-order-id"></p>
+      <p style="font-size: 0.75rem; color: #888; margin-top: 0.5rem;">Estimated delivery in 3-4 business days.</p>
+      <button onclick="window.location.href='index.html'" class="maroon-btn" style="margin-top: 1.5rem; width: 100%; justify-content: center;">Return to Storefront</button>
+    </div>
+  </div>
+
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/wishlist.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/checkout.js"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+/* ==========================================================================
+   Azhagu Mayil Collection - Admin Dashboard Styles
+   ========================================================================== */
+
+.admin-header {
+  background: white;
+  padding: 1.25rem;
+  border-radius: 1rem;
+  border: 1px solid var(--color-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.kpi-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.kpi-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid var(--color-border);
+}
+
+.kpi-title {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #666;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.kpi-value {
+  font-family: var(--font-mono);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-maroon-dark);
+}
+
+.admin-table-wrap {
+  background: white;
+  border-radius: 1rem;
+  border: 1px solid var(--color-border);
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+  text-align: left;
+}
+
+.admin-table th {
+  background: var(--color-cream);
+  padding: 0.85rem 1rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.admin-table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.admin-table tr:hover {
+  background: #fdfbf7;
+}
+
+.status-badge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.status-badge.delivered {
+  background: #e6f4ea;
+  color: #137333;
+}
+
+.status-badge.shipped {
+  background: #e8f0fe;
+  color: #1a73e8;
+}
+
+.status-badge.pending {
+  background: #fef7e0;
+  color: #b06000;
+}

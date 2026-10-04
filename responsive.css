@@ -1,0 +1,54 @@
+/* ==========================================================================
+   Azhagu Mayil Collection - Responsive Breakpoints
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .nav-mobile-toggle {
+    display: block;
+  }
+
+  .announcement-inner {
+    flex-direction: column;
+    gap: 0.25rem;
+    text-align: center;
+  }
+
+  .announcement-right {
+    display: none;
+  }
+
+  .hero-content h1 {
+    font-size: 2.25rem !important;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-actions {
+    grid-template-columns: 1fr;
+  }
+}
