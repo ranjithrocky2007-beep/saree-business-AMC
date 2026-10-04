@@ -1,0 +1,6 @@
+{
+  "name": "Azhagu Mayil Collection - Luxury Saree Boutique",
+  "description": "Exquisite South Indian silk and designer sarees woven with timeless beauty and traditional elegance.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
